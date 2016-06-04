@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+  <link href="app.less" type="text/css" rel="stylesheet/less">
+    <link href="bower_components/AdminLTE/dist/css/AdminLTE.min.css" rel="stylesheet">
+    <link href="bower_components/AdminLTE/dist/css/skins/skin-black.css" rel="stylesheet">
+</head>
+<body class="skin-black">
+
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+  <!-- JS from Bower Components -->
+  <script src="bower_components/less.js/dist/less.js" data-concat="false"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/AdminLTE/dist/js/app.min.js"></script>
+  <!-- Add New Bower Component JS Above -->
+
+
+  <!-- Main App JS -->
+  <script src="app.js"></script>
+  <script src="partial/articles/articles.js"></script>
+  <script src="partial/projects/projects.js"></script>
+  <!-- Add New Component JS Above -->
+
+  <div class="wrapper">
+
+      <div class="main-header"></div>
+
+      <div class="sidebar-wrapper">
+          <div class="main-sidebar">
+              <!-- Inner sidebar -->
+              <div class="sidebar">
+
+                  <!-- Sidebar Menu -->
+                  <ul class="sidebar-menu">
+                      <li class="header">Menu</li>
+                      <!-- Optionally, you can add icons to the links -->
+                      <li ui-sref="articles" ui-sref-active="active"><a href="#"><span>Articles</span></a></li>
+                      <li ui-sref="projects" ui-sref-active="active"><a href="#"><span>Projects</span></a></li>
+
+                  </ul><!-- /.sidebar-menu -->
+              </div>
+
+          </div>
+      </div>
+
+      <div class="content-wrapper" ui-view>
+          <!-- HOLDS MAIN APPLICATION VIEWS -->
+      </div>
+
+  </div>
+
+
+
+</body>
+</html>
