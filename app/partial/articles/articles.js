@@ -1,4 +1,5 @@
-angular.module('app').controller('ArticlesCtrl',function($scope){
+angular.module('app').controller('ArticlesCtrl',function($scope, articleService){
 
-
+    $scope.articles = articleService.model.list;
+    
 });

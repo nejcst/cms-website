@@ -1,0 +1,23 @@
+<section class="content-header">
+    <h1>New article</h1>
+</section>
+
+<section class="content">
+
+    <br>
+
+    <label>Title</label>
+    <input type="text" class="form-control" ng-model="article.title">
+
+    <label>Tags</label>
+    <input type="text" class="form-control" ng-model="article.tags">
+
+    <label>Author</label>
+    <input type="text" class="form-control" ng-model="article.author">
+
+    <br>
+
+    <div class="btn btn-xs btn-success" ng-click="articleCreate()">Create</div>
+    <div class="btn btn-xs btn-warning" ui-sref="articles">Go back</div>
+
+</section>
