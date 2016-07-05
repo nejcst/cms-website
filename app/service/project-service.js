@@ -1,13 +1,13 @@
-angular.module('app').factory('articleService',function($http) {
+angular.module('app').factory('projectService',function($http) {
 
-    var articleService = {
+    var projectService = {
         model: {
             list: [],
             item: null
         },
         create:function(data, cb){
 
-            $http.post('http://localhost:3010/article', data)
+            $http.post('http://localhost:3010/project', data)
                 .then(function(res){
                     console.log(data);
                     if(cb){
@@ -18,11 +18,11 @@ angular.module('app').factory('articleService',function($http) {
         },
         getAll:function(cb){
 
-            var promise = $http.get('http://localhost:3010/articles');
+            var promise = $http.get('http://localhost:3010/projects');
 
             promise.then(function(res){
 
-                articleService.model.list = res.data;
+                projectService.model.list = res.data;
 
                 if(cb){
                     cb(res.data);
@@ -35,12 +35,12 @@ angular.module('app').factory('articleService',function($http) {
         },
         getOne:function(id){
 
-            var promise = $http.get('http://localhost:3010/article/'+id);
+            var promise = $http.get('http://localhost:3010/project/'+id);
 
             promise.then(function(res){
 
                 console.log(res);
-                articleService.model.item = res.data;
+                projectService.model.item = res.data;
 
             });
 
@@ -49,7 +49,7 @@ angular.module('app').factory('articleService',function($http) {
         },
         update:function(id, data){
 
-            var promise = $http.put('http://localhost:3010/article/'+id, data);
+            var promise = $http.put('http://localhost:3010/project/'+id, data);
 
             promise.then(function(res){
 
@@ -68,14 +68,14 @@ angular.module('app').factory('articleService',function($http) {
                 return false;
             }
 
-            var promise = $http.delete('http://localhost:3010/article/'+id);
+            var promise = $http.delete('http://localhost:3010/project/'+id);
 
             promise.then(function(res){
 
-                angular.forEach(articleService.model.list, function(article, i){
+                angular.forEach(projectService.model.list, function(project, i){
 
-                    if(article._id === id){
-                        articleService.model.list.splice(i,1);
+                    if(project._id === id){
+                        projectService.model.list.splice(i,1);
                     }
 
                 });
@@ -86,5 +86,5 @@ angular.module('app').factory('articleService',function($http) {
         }
     };
 
-    return articleService;
+    return projectService;
 });

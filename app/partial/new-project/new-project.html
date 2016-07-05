@@ -1,0 +1,23 @@
+<section class="content-header">
+    <h1>New project</h1>
+</section>
+
+<section class="content">
+
+    <br>
+
+    <label>Title</label>
+    <input type="text" class="form-control" ng-model="project.title">
+
+    <label>Tags</label>
+    <input type="text" class="form-control" ng-model="project.tags">
+
+    <label>Author</label>
+    <input type="text" class="form-control" ng-model="project.author">
+
+    <br>
+
+    <div class="btn btn-xs btn-success" ng-click="projectCreate()">Create</div>
+    <div class="btn btn-xs btn-warning" ui-sref="projects">Go back</div>
+
+</section>

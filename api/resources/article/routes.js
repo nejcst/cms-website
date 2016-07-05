@@ -20,6 +20,25 @@ module.exports = function(){
 
     });
 
+    server.get('/article/:id', function(req, res){
+
+        const articleId = req.params.id;
+
+        const Article = mongoose.model('Article');
+
+        Article.findById(articleId, function(err, doc){
+
+            if(!err){
+                res.send(doc);
+            }
+            else{
+                res.status(400).send(err);
+            }
+
+        });
+
+    });
+
     server.post('/article', function(req, res){
 
         const data = req.body;
