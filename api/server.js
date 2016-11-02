@@ -6,6 +6,7 @@ const cors = require('cors');
 const ejs = require('ejs');
 const PORT = require('./config').PORT;
 const database = require('./database');
+const mongoose = require('mongoose');
 
 exports.server = server;
 server.locals.moment = require('moment');
