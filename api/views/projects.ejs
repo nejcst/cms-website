@@ -1,0 +1,44 @@
+<!DOCTYPE>
+
+<html>
+    <% include header.ejs %>
+
+<body>
+
+    <% include navigation.ejs %>
+
+    <p class="pageNum">Page: <%- pageNum %></p>
+
+    <div class="projects-container">
+
+        <% for(var i=0; i<projects.length; i++){ %>
+            <div class="project-container">
+                <div class="project-title"><b><%- projects[i].title %></b></div>
+                <br/>
+                <div class="project-author"><b>Author:</b> <%- projects[i].author %></div>
+                <br/>
+                <div class="project-dateCreated"><b>Date created:</b> <%- moment(projects[i].dateCreated).format('LL') %></div>
+                <br/>
+                <a class="read-more" href="/project/<%- projects[i].id%>"> Read more... </a>
+            </div>
+        <%}%>
+
+        <ul class="page-list">
+
+            <% for(var i=0; i <  numberOfPages; i++ ){ %>
+            <li>
+                <% if(pageNum !== i) { %>
+                <!-- Page link -->
+                <a href="?page=<%- i %>"><%- i %></a>
+                <% }else{ %>
+                <!-- Current page button -->
+                <p><%- i %></p>
+                <% } %>
+            </li>
+            <% } %>
+        </ul>
+
+    </div>
+
+</body>
+</html>

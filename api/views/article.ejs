@@ -1,0 +1,32 @@
+<!DOCTYPE>
+
+<html>
+<head>
+
+    <% include header.ejs %>
+
+</head>
+<body>
+
+<div class="single-article-container">
+
+    <h3 class="single-article-title"><%- article.title %></h3>
+    <p ><b>Article tags: </b><%- article.tags %></p>
+    <br/>
+    <div class="single-article-content-container">
+        <p><%- article.body %></p>
+    </div>
+    <br/>
+    <p>Date created: <b><%-  moment(article.dateCreated).format('LL') %></b> by <b><%- article.author %></b></p>
+
+</div>
+
+<hr/>
+
+<div class="back-button">
+    <a href="/articles" class="back-button">Back to Articles</a>
+</div>
+
+
+</body>
+</html>

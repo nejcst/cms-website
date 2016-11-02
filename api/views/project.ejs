@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+
+    <% include header.ejs %>
+
+<body>
+
+  <div class="single-project-container">
+
+    <h2 class="single-project-title"><%- project.title %></h2>
+
+    <div class="single-project-content-container">
+        <b>About description:</b>
+        <p><%- project.body %></p>
+        <p><b>Author: </b><%- project.author %></p>
+        <p><b>Date created: </b><%- moment(project.dateCreated).format('LL') %></p>
+        <p class="project-linktext"><b>Link: </b><a href="<%- project.link %>"><%- project.link %></a></p>
+    </div>
+    <br/>
+
+  </div>
+  <hr/>
+  <div class="back-button">
+      <a href="/projects" class="back-button">Back to Projects</a>
+  </div>
+
+
+
+
+  </body>
+  </html>

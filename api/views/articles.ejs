@@ -1,0 +1,48 @@
+
+<!DOCTYPE>
+
+<html>
+
+ <% include header.ejs %>
+
+<body>
+
+    <% include navigation.ejs %>
+
+    <p class="pageNum">Page: <%- pageNum %></p>
+
+    <div class="articles-container">
+
+            <% for(var i=0; i<articles.length; i++){ %>
+                <div class="article-container">
+                    <div class="article-title"><b><%- articles[i].title  %></b></div>
+                    <br/>
+                    <div class="article-keywords"><b>Key words:</b> <%- articles[i].tags %></div>
+                    <br/>
+                    <div class="article-published"><b>Date created:</b> <%-  moment(articles[i].dateCreated).format('LL')  %>
+                        by  <%- articles[i].author %>
+                    </div>
+                    <br/>
+                    <a href="/article/<%- articles[i].id %>" class="read-more"> Read more...</a>
+                </div>
+            <% } %>
+
+        <ul class="page-list">
+
+            <% for(var i=0; i <  numberOfPages; i++ ){ %>
+           <li>
+               <% if(pageNum !== i) { %>
+                <!-- Page link -->
+               <a href="?page=<%- i %>"><%- i %></a>
+               <% }else{ %>
+               <!-- Current page button -->
+               <p><%- i %></p>
+               <% } %>
+           </li>
+            <% } %>
+        </ul>
+
+    </div>
+
+</body>
+</html>
